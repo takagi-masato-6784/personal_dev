@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>商品一覧</title>
+</head>
+
+<body>
+	<header th:replace="header"></header>
+	<nav>
+		<a href="/items">全商品</a><br>
+		<a href="/cart">カートを見る</a><br>
+		<p>・ブランド</p>
+		<a th:each="b:${brands}" th:href="@{/items(brandId=${b.id})}">
+			<span th:text="${b.brand}" style="padding-left:10px;"></span>
+		</a><br>
+		<p>・オーディオコーデック</p>
+		<a th:each="c:${codec}" th:href="@{/items(codecId=${c.id})}">
+			<span th:text="${c.codec}" style="padding-left:10px;"></span>
+		</a>
+	</nav>
+	<main>
+		<table border="1">
+			<tr>
+				<th>No</th>
+				<th>ブランド名</th>
+				<th>オーディオコーデック</th>
+				<th>商品名</th>
+				<th>値段</th>
+			</tr>
+			<tr th:each="i:${items}">
+				<td th:text="${i.id}"></td>
+				<td>
+					<p th:each="b:${brands}"><span th:if="${b.id == i.brandId}" th:text="${b.brand}"></span></p>
+				</td>
+				<td>
+					<p th:each="c:${codec}"><span th:if="${c.id == i.codecId}" th:text="${c.codec}"></span></p>
+				</td>
+				<td th:text="${i.name}"></td>
+				<td th:text="${i.price}"></td>
+				<td>
+					<form action="/cart/add" method="post">
+						<input type="hidden" name="itemId" th:value="${i.id}">
+						<button>カートに追加</button>
+					</form>
+				</td>
+				<td>
+					<form action="/review" method="post">
+						<button>レビュー</button>
+					</form>
+				</td>
+				
+			</tr>
+		</table>
+	</main>
+	<header th:replace="footer"></header>
+</body>
+
+</html>
