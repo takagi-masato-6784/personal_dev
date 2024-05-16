@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>レビュー</title>
+</head>
+
+<body>
+	<p><span th:text="${message}" style="color:red"></span></p>
+	<div th:if="reviews">
+		<form th:unless="${#lists.size(reviews)}==0">
+			<table border="1">
+				<tr>
+					<th>商品番号</th>
+					<th>タイトル</th>
+					<th>内容</th>
+					<th>評価</th>
+					<th>投稿日</th>
+				</tr>
+				<tr th:each="r:${reviews}">
+					<td th:text="${r.itemId}"></td>
+					<td th:text="${r.title}"></td>
+					<td th:text="${r.report}"></td>
+					<td th:text="${r.score}"></td>
+					<td th:text="${r.reviewDay}"></td>
+				</tr>
+
+			</table>
+		</form>
+	</div>
+
+
+
+	<ul>
+		<li th:each="_msg : ${msg}" th:text="${_msg}" style="color:red"></li>
+	</ul>
+
+	<form action="/add/review" method="post">
+		<input type="hidden" name="itemId" th:Value="${itemId}">
+		<table border="1">
+			<tr>
+				<th>商品番号</th>
+				<th>タイトル</th>
+				<th>内容</th>
+				<th>評価(10段階)</th>
+			</tr>
+			<tr>
+				<td th:text="${itemId}"></td>
+				<td><input type="text" name=title></td>
+				<td><textarea name="report"></textarea></td>
+				<td><input type="number" name="score"></td>
+			</tr>
+
+		</table>
+		<button>登録</button>
+
+	</form>
+
+	<a href="/items">商品一覧へ</a>
+
+</body>
+
+</html>

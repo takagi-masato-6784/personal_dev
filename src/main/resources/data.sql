@@ -24,7 +24,7 @@ INSERT INTO items(brand_id, codec_id, name, price) VALUES(3, 2, 'ATH-M50xBT2', 2
 INSERT INTO items(brand_id, codec_id, name, price) VALUES(5, 3, 'JBL Tour Pro2', 33000);
 
 INSERT INTO customers(name, address, tel, email) VALUES('田中太郎','東京都', '090-1111-1111','tanaka@aaa.com');
-INSERT INTO customers(name, address, tel, email) VALUES('田中太郎','大阪府', '090-1111-2222','suzuki@aaa.com');
+INSERT INTO customers(name, address, tel, email) VALUES('鈴木一郎','大阪府', '090-1111-2222','suzuki@aaa.com');
 
 INSERT INTO orders(customer_id, ordered_on, total_price) VALUES(1, '2024-04-12', 6760);
 INSERT INTO orders(customer_id, ordered_on, total_price) VALUES(2, '2024-04-13', 2500);

@@ -29,6 +29,11 @@ public class Customer {
 		this.email = email;
 	}
 
+	public Customer(String addName) {
+		this.name = addName;
+		
+	}
+
 	// ゲッター
 	public Integer getId() {
 		return id;

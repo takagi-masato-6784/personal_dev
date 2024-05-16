@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<title>ログイン</title>
+	<meta charset="UTF-8">
+	<title>ログイン</title>
 </head>
+
 <body>
 	<header>
 		<h1>オーディオショッピング</h1>
 	</header>
 	<main>
-		<form action ="/login" method = "post">
-			<input type="text" name = "name" placeholder="名前">
+		<form action="/login" method="post">
+			<input type="text" name="name" placeholder="名前">
 			<button>ログイン</button>
 			<br><span th:text="${message}" style="color:red"></span>
+			<br><span th:text="${error}" style="color:red"></span>
 		</form>
-		<form action ="/addAccount">
-			<button>新規登録</button>
-		</form>
+		<hr>
+		<a href="/addAccount">※ご登録はこちら</a>
 	</main>
 
 </body>
+
 </html>
