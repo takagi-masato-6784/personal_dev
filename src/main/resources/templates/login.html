@@ -4,16 +4,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ログイン</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
-	<header>
-		<h1>オーディオショッピング</h1>
-	</header>
-	<main>
+	<main class="login">
+		<div class="loginImage">
+			<img src="Audio Shopping.png" class="image"><br>
+			<h1 class ="word">Audio Shopping</h1>
+		</div>
+		<h2>ログイン</h2>
 		<form action="/login" method="post">
-			<input type="text" name="name" placeholder="名前">
-			<button>ログイン</button>
+			<span class="name">お名前を入力してください</span><br>
+			<input type="text" name="name"><br>
+			<button>次に進む</button>
 			<br><span th:text="${message}" style="color:red"></span>
 			<br><span th:text="${error}" style="color:red"></span>
 		</form>

@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body class="header">
 	<header>
-		<h1>オーディオショッピング</h1>
+		<img src="Audio Shopping.png" class="logo"><br>
+		<h1>Audio Shopping</h1>
 		<span th:text="${@account.name}+' さんがログイン中'"></span>
-		<a href="/logout">ログアウト</a>
+		<br><a href="/logout">ログアウト</a>
 	</header>
 </body>
 </html>
