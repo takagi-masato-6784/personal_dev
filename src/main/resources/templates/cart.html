@@ -8,8 +8,8 @@
 <body>
 	<header th:replace="header"></header>
 	<hr>
-	<main>
-		<span th:replace="cartItem"></span>
+	<main class="cart_table">
+		<table th:replace="cartItem"></table>
 		<form action="/order">
 			<button>注文する</button>
 		</form>

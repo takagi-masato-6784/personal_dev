@@ -8,13 +8,13 @@
 <body>
 	<header th:replace="header"></header>
 	<hr>
-	<main>
+	<main class="customer_form">
 		<h3>ご注文商品</h3>
 		<span th:replace="cartItem"></span>
 		<hr>
 		<h3>お客様情報を入力してください</h3>
 		<form action="/order/confirm" method="post">
-			<table border="1">
+			<table border="1" style="margin: auto;">
 				<tr>
 					<th>お名前</th>
 					<td>

@@ -5,7 +5,8 @@ header {
 	background-color: #737373;
 	color: rgb(255, 255, 255);
 	text-align: center;
-	height: 150px;
+	height: 160px;
+	border-radius: 9px;
 }
 
 header h1 {
@@ -21,16 +22,35 @@ header span {
 	font-size: 15pt;
 	margin: 10px auto;
 	position: relative;
-	left: 500px;
-	bottom: 210px;
+	left: 480px;
+	bottom: 270px;
 }
+
+header .logout {
+	text-decoration: none;
+	background-color: #ffde59;
+	color: white;
+	padding: 0px;
+	font-weight: bold;
+	border: solid #ffde59 2px;
+	border-radius: 5px;
+	left: 570px;
+	bottom: 260px;
+}
+
+.logout:hover {
+	color: #ffde59;
+	background-color: white;
+
+}
+
 
 header a {
 	font-size: 15pt;
 	margin: 10px auto;
 	position: relative;
-	left: 580px;
-	bottom: 200px;
+	left: 520px;
+	bottom: 205px;
 
 }
 
@@ -41,19 +61,88 @@ header .logo {
 	top: 10px;
 }
 
+header .allItem {
+	bottom: 175px;
+	left: 580px;
+	text-decoration: none;
+	background-color: #ffde59;
+	color: white;
+	padding: 3px;
+	font-weight: bold;
+	border: solid #ffde59 2px;
+	border-radius: 10px;
+}
+
+.allItem:hover {
+	color: #ffde59;
+	background-color: white;
+
+}
+
+header .cart {
+	position: relative;
+	left: 720px;
+	bottom: 160px;
+}
+
+header .cartImg {
+	height: 2em;
+}
+
+header .cart:hover {
+	opacity: 0.6;
+	transition: 0.8s;
+}
+
 body {
 	background-color: #d9d9d9;
 }
 
-main {
+h1 {
 	text-align: center;
-	margin: auto;
-	
+}
+
+.wrap {
+	display: grid;
+	grid-template-columns: 0.5fr 3.5fr;
+}
+
+.side {
+	display: inline-flex;
+	flex-wrap: column;
+	margin-top: 10px;
+	margin-right: 10px;
+	background-color: #c0c0c0;
+	border-radius: 9px;
+}
+
+.main {
+	margin-top: 10px;
+	background-color: #a9a9a9;
+	border-radius: 9px;
+}
+
+main.login {
+	width: 500px;
+	padding: 1em 1em;
+	color: #FFF;
+	background: #c0c0c0;
+	border-bottom: solid 6px #c0c0c0;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+	border-radius: 9px;
+	text-align: center;
+	position: relative;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
 }
 
 main.login .loginImage {
 	background-color: #737373;
 	height: 113px;
+	border-radius: 9px;
 }
 
 main.login .loginImage .image {
@@ -69,35 +158,253 @@ main.login .loginImage h1.word {
 	font-size: 35pt;
 	position: relative;
 	left: 50px;
-	bottom:130px;
+	bottom: 130px;
 }
 
-main.login {
-	width: 600px;
-	height: 600px;
-	margin: auto;
-	border: 1px solid;
-	margin-top: 50px;
-	padding-left: 1px;
-	padding-right: 1px;
+main.login h2 {
+	font-size: 30px;
+	margin-top: 40px;
 }
+
 
 main.login form .name {
 	font-size: 10px;
 }
 
 main.login button {
-	margin-top: 50px;
+	margin-top: 20px;
+}
 
+hr {
+	width: 70%;
 }
 
 .items {
-	display:inline-flex;
+	display: inline-flex;
 	flex-wrap: wrap;
+	justify-content: center;
 	gap: 2em;
-	margin: 100px;
+	margin-top: 50px;
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-bottom: 100px;
+}
+
+.item {
+	padding: 1em 1em;
+	margin: 2em 0;
+	color: #FFF;
+	background: #c0c0c0;
+	border-bottom: solid 6px #c0c0c0;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+	border-radius: 9px;
+}
+
+.item-image {
+	object-fit: cover;
+	width: 300px;
+	height: 200px;
+	border-radius: 10px;
+}
+
+.review{
+	text-align: center;
+}
+
+.cart_table{
+	text-align: center;
+}
+
+.customer_form{
+	text-align: center;
+}
+
+.order_confirm{
+	text-align: center;
+}
+
+.orderd{
+	text-align: center;
 }
 
 footer {
 	background-color: #737373;
+	height: 100px;
+}
+
+/**
+ * Carousel.sass
+ * @author: Dang Van Thanh
+ * @github: https://github.com/dangvanthanh/carousel.sass
+ * @description: A Simple Carousel Pure CSS Using Sass
+ * @version: 1.0.0
+ */
+.carousel > input[type=radio]:nth-child(5):checked ~ .carousel__next > label:nth-child(1), .carousel > input[type=radio]:nth-child(5):checked ~ .carousel__prev > label:nth-child(4), .carousel > input[type=radio]:nth-child(4):checked ~ .carousel__next > label:nth-child(5), .carousel > input[type=radio]:nth-child(4):checked ~ .carousel__prev > label:nth-child(3), .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__next > label:nth-child(4), .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__prev > label:nth-child(2), .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__next > label:nth-child(3), .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__prev > label:nth-child(1), .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__next > label:nth-child(2), .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__prev > label:nth-child(5) {
+  opacity: 1 !important;
+  z-index: 3;
+}
+
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  background: #fcfcfc;
+  margin: 0;
+}
+
+.container {
+  width: 900px;
+  min-width: 900px;
+  margin: 50px auto;
+}
+
+.carousel {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.carousel > input[type=radio] {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  top: 0;
+}
+.carousel > input[type=radio]:checked ~ .carousel__items .carousel__item,
+.carousel > input[type=radio]:checked ~ .carousel__prev > label,
+.carousel > input[type=radio]:checked ~ .carousel__next > label {
+  opacity: 0;
+}
+.carousel > input[type=radio]:nth-child(1):checked ~ .carousel__items .carousel__item:nth-child(1) {
+  opacity: 1;
+}
+.carousel > input[type=radio]:nth-child(1):checked ~ .carousel__nav > label:nth-child(1) {
+  background: #ccc;
+  cursor: default;
+  pointer-events: none;
+}
+.carousel > input[type=radio]:nth-child(2):checked ~ .carousel__items .carousel__item:nth-child(2) {
+  opacity: 1;
+}
+.carousel > input[type=radio]:nth-child(2):checked ~ .carousel__nav > label:nth-child(2) {
+  background: #ccc;
+  cursor: default;
+  pointer-events: none;
+}
+.carousel > input[type=radio]:nth-child(3):checked ~ .carousel__items .carousel__item:nth-child(3) {
+  opacity: 1;
+}
+.carousel > input[type=radio]:nth-child(3):checked ~ .carousel__nav > label:nth-child(3) {
+  background: #ccc;
+  cursor: default;
+  pointer-events: none;
+}
+.carousel > input[type=radio]:nth-child(4):checked ~ .carousel__items .carousel__item:nth-child(4) {
+  opacity: 1;
+}
+.carousel > input[type=radio]:nth-child(4):checked ~ .carousel__nav > label:nth-child(4) {
+  background: #ccc;
+  cursor: default;
+  pointer-events: none;
+}
+.carousel > input[type=radio]:nth-child(5):checked ~ .carousel__items .carousel__item:nth-child(5) {
+  opacity: 1;
+}
+.carousel > input[type=radio]:nth-child(5):checked ~ .carousel__nav > label:nth-child(5) {
+  background: #ccc;
+  cursor: default;
+  pointer-events: none;
+}
+.carousel__items {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+.carousel__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: opacity 2s;
+  -webkit-transition: opacity 2s;
+}
+.carousel__item img {
+  width: 100%;
+  vertical-align: middle;
+}
+.carousel__prev > label, .carousel__next > label {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  opacity: 0;
+  z-index: 2;
+}
+.carousel__prev > label:hover, .carousel__prev > label:focus, .carousel__next > label:hover, .carousel__next > label:focus {
+  opacity: 0.5 !important;
+}
+.carousel__prev > label:before, .carousel__prev > label:after, .carousel__next > label:before, .carousel__next > label:after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+}
+.carousel__prev > label:before, .carousel__next > label:before {
+  background: linear-gradient(to top, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%), linear-gradient(to left, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%);
+  width: 60%;
+  height: 60%;
+  top: 20%;
+}
+.carousel__prev > label {
+  left: 2%;
+}
+.carousel__prev > label:before {
+  left: 35%;
+  top: 20%;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+.carousel__next > label {
+  right: 2%;
+}
+.carousel__next > label:before {
+  left: 10%;
+  transform: rotate(315deg);
+  -webkit-transform: rotate(315deg);
+}
+.carousel__nav {
+  position: absolute;
+  bottom: 3%;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 3;
+}
+.carousel__nav > label {
+  border: 1px solid #fff;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 0.125%;
+  width: 20px;
+  height: 20px;
 }

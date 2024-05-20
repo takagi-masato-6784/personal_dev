@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
 </head>
+
 <body class="header">
 	<header>
 		<img src="Audio Shopping.png" class="logo"><br>
 		<h1>Audio Shopping</h1>
+		<a href="/cart" class="cart"><img src="cart.png" class="cartImg"></a>
 		<span th:text="${@account.name}+' さんがログイン中'"></span>
-		<br><a href="/logout">ログアウト</a>
+		<br><a href="/logout" class="logout">ログアウト</a>
 	</header>
 </body>
+
 </html>

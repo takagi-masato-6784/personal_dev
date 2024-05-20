@@ -5,62 +5,133 @@
 	<meta charset="UTF-8">
 	<title>商品一覧</title>
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
 </head>
 
 <body>
 	<header th:replace="header"></header>
-	<nav>
-		<a href="/items">全商品</a><br>
-		<a href="/cart">カートを見る</a><br>
-		<p>・ブランド
-			<a th:each="b:${brands}" th:href="@{/items(brandId=${b.id})}">
-				<span th:text="${b.brand}" style="padding-left:10px;"></span></a>
-		</p>
 
-		<p>・オーディオコーデック
-			<a th:each="c:${codec}" th:href="@{/items(codecId=${c.id})}">
-				<span th:text="${c.codec}" style="padding-left:10px;"></span>
-			</a>
-		</p>
+	<div class="container">
+		<div class="carousel">
+			<input type="radio" id="carousel-1" name="carousel[]" checked>
+			<input type="radio" id="carousel-2" name="carousel[]">
+			<input type="radio" id="carousel-3" name="carousel[]">
+			<ul class="carousel__items">
+				<li class="carousel__item"><img
+						src="SONY.JPG"
+						alt=""></li>
+				<li class="carousel__item"><img
+						src="JBL.jpg"
+						alt=""></li>
+				<li class="carousel__item"><img
+						src="Panasonic.jpg"
+						alt=""></li>
+			</ul>
+			<div class="carousel__prev">
+				<label for="carousel-1"></label>
+				<label for="carousel-2"></label>
+				<label for="carousel-3"></label>
+			</div>
+			<div class="carousel__next">
+				<label for="carousel-1"></label>
+				<label for="carousel-2"></label>
+				<label for="carousel-3"></label>
+			</div>
+			<div class="carousel__nav">
+				<label for="carousel-1"></label>
+				<label for="carousel-2"></label>
+				<label for="carousel-3"></label>
+			</div>
+		</div>
+	</div>
 
+	<div class="wrap">
+		<div class="side">
+			<div class="side_content" style="display: inline;">
+				<a href="/items" class="allItem">・全商品</a>
+				<p>・ブランド</p>
+				<a th:each="b:${brands}" th:href="@{/items(brandId=${b.id})}">
+					<span th:text="${b.brand}" style="padding-left:10px;"></span></a>
+				<p>・コーデック</p>
+				<a th:each="c:${codec}" th:href="@{/items(codecId=${c.id})}">
+					<span th:text="${c.codec}" style="padding-left:10px;"></span>
+				</a>
+			</div>
+		</div>
+		<div class="main">
+			<h1>Item</h1>
+			<hr>
+			<div class="items">
+				<div th:each="i:${items}" class="item">
+					<div style="display: inline;">
+						<img th:src="'/item.img/'+${i.id}+'.jpg'" class="item-image"><br>
+						<a th:each="b:${brands}"><span th:if="${b.id == i.brandId}" th:text="${b.brand}"></span></a>
+						<a th:text="${i.name}"></a><br>
+						<a>コーデック/</a><a th:each="c:${codec}"><span th:if="${c.id == i.codecId}"
+								th:text="${c.codec}"></span></a><br>
+						<a td th:text="${i.price}"></a><a>円</a>
+						<form action="/cart/add" method="post">
+							<input type="hidden" name="itemId" th:value="${i.id}">
+							<button>カートに追加</button>
+						</form>
+						<form action="/review" method="get">
+							<input type="hidden" name="itemId" th:value="${i.id}">
+							<button>レビュー</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<!--<nav>
+		<div class="side">
+			<div class="side_content">
+				<p>・ブランド
+					<a th:each="b:${brands}" th:href="@{/items(brandId=${b.id})}">
+						<span th:text="${b.brand}" style="padding-left:10px;"></span></a>
+				</p>
+				<p>・オーディオコーデック
+					<a th:each="c:${codec}" th:href="@{/items(codecId=${c.id})}">
+						<span th:text="${c.codec}" style="padding-left:10px;"></span>
+					</a>
+				</p>
+			</div>
+		</div>
 	</nav>
 	<main>
-		<!--<table border="1">
-			<tr>
-				<th>No</th>
-				<th>ブランド名</th>
-				<th>オーディオコーデック</th>
-				<th>商品名</th>
-				<th>値段</th>
-			</tr>
-			<tr th:each="i:${items}">
-				<td th:text="${i.id}"></td>
-				<td>
-					<p th:each="b:${brands}"><span th:if="${b.id == i.brandId}" th:text="${b.brand}"></span></p>
-				</td>
-				<td>
-					<p th:each="c:${codec}"><span th:if="${c.id == i.codecId}" th:text="${c.codec}"></span></p>
-				</td>
-				<td th:text="${i.name}"></td>
-				<td th:text="${i.price}"></td>
-				<td>
+
+		<h1>Item</h1>
+		<hr>
+
+		<div class="items">
+			<div th:each="i:${items}" class="item">
+				<div style="display: inline;">
+					<img th:src="'/item.img/'+${i.id}+'.jpg'" class="item-image"><br>
+					<a th:each="b:${brands}"><span th:if="${b.id == i.brandId}" th:text="${b.brand}"></span></a>
+					<a th:text="${i.name}"></a><br>
+					<a>コーデック/</a><a th:each="c:${codec}"><span th:if="${c.id == i.codecId}"
+							th:text="${c.codec}"></span></a><br>
+					<a td th:text="${i.price}"></a><a>円</a>
 					<form action="/cart/add" method="post">
 						<input type="hidden" name="itemId" th:value="${i.id}">
 						<button>カートに追加</button>
 					</form>
-				</td>
-				<td>
 					<form action="/review" method="get">
 						<input type="hidden" name="itemId" th:value="${i.id}">
 						<button>レビュー</button>
 					</form>
-				</td>
-			</tr>
-		</table>-->
-
-		<div class="items">
+				</div>
+			</div>
+		</div>-->
+	<!--<div class="items">
 			<div th:each="i:${items}" class="item">
-				<table border="1"  style="display: inline;">
+				<table border="1" style="display: inline;">
 					<tr>
 						<th>No</th>
 						<th>ブランド名</th>
@@ -94,7 +165,44 @@
 				</form>
 			</div>
 
-		</div>
+		</div>-->
+
+
+
+	<!--<table border="1">
+			<tr>
+				<th>No</th>
+				<th>ブランド名</th>
+				<th>オーディオコーデック</th>
+				<th>商品名</th>
+				<th>値段</th>
+			</tr>
+			<tr th:each="i:${items}">
+				<td th:text="${i.id}"></td>
+				<td>
+					<p th:each="b:${brands}"><span th:if="${b.id == i.brandId}" th:text="${b.brand}"></span></p>
+				</td>
+				<td>
+					<p th:each="c:${codec}"><span th:if="${c.id == i.codecId}" th:text="${c.codec}"></span></p>
+				</td>
+				<td th:text="${i.name}"></td>
+				<td th:text="${i.price}"></td>
+				<td>
+					<form action="/cart/add" method="post">
+						<input type="hidden" name="itemId" th:value="${i.id}">
+						<button>カートに追加</button>
+					</form>
+				</td>
+				<td>
+					<form action="/review" method="get">
+						<input type="hidden" name="itemId" th:value="${i.id}">
+						<button>レビュー</button>
+					</form>
+				</td>
+			</tr>
+		</table>-->
+
+
 	</main>
 	<header th:replace="footer"></header>
 </body>
