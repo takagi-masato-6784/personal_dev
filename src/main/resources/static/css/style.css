@@ -46,7 +46,7 @@ header .logout {
 
 
 header a {
-	font-size: 15pt;
+
 	margin: 10px auto;
 	position: relative;
 	left: 520px;
@@ -61,15 +61,59 @@ header .logo {
 	top: 10px;
 }
 
-header .allItem {
-	bottom: 175px;
-	left: 580px;
-	text-decoration: none;
-	background-color: #ffde59;
+.cartImg {
+	height: 2em;
+	position: relative;
+	bottom: -30px;
+	left: 190px;
+}
+
+.cartImg {
+	overflow: hidden;
+}
+
+.cartImg {
+	transform: scale(1.3);
+}
+
+.cartImg:hover {
+	transform: scale(1);
+	transition: 0.3s;
+}
+
+body {
+	background-color: #d9d9d9;
+}
+
+h1 {
+	padding-top: 10px;
+	text-align: center;
+	margin: 10px;
+	font-family: 'Sacramento', cursive;
 	color: white;
-	padding: 3px;
+	font-size: 60px;
+}
+
+.wrap {
+	display: grid;
+	grid-template-columns: 0.5fr 3.5fr;
+}
+
+.side {
+	padding-left: 10px;
+	padding-top: 10px;
+	text-align: left;
+	margin-top: 10px;
+	margin-right: 10px;
+	background-color: #a9a9a9;
+	border-radius: 9px;
+}
+
+.allItem {
+	padding-right: 10px;
+	text-decoration: none;
+	color: white;
 	font-weight: bold;
-	border: solid #ffde59 2px;
 	border-radius: 10px;
 }
 
@@ -79,42 +123,46 @@ header .allItem {
 
 }
 
-header .cart {
-	position: relative;
-	left: 720px;
-	bottom: 160px;
+.brand-word {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
 }
 
-header .cartImg {
-	height: 2em;
+.category-brand {
+	padding-left: 1px;
+	padding-right: 12px;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
 }
 
-header .cart:hover {
-	opacity: 0.6;
-	transition: 0.8s;
+.category-brand:hover {
+	color: #ffde59;
+	background-color: white;
 }
 
-body {
-	background-color: #d9d9d9;
+.category-codec {
+	padding-left: 1px;
+	padding-right: 12px;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
 }
 
-h1 {
-	text-align: center;
+.category-codec:hover {
+	color: #ffde59;
+	background-color: white;
 }
 
-.wrap {
-	display: grid;
-	grid-template-columns: 0.5fr 3.5fr;
+.codec-word {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
 }
 
-.side {
-	display: inline-flex;
-	flex-wrap: column;
-	margin-top: 10px;
-	margin-right: 10px;
-	background-color: #c0c0c0;
-	border-radius: 9px;
-}
 
 .main {
 	margin-top: 10px;
@@ -184,9 +232,9 @@ hr {
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 2em;
-	margin-top: 50px;
-	margin-left: 100px;
-	margin-right: 100px;
+	margin-top: 0px;
+	margin-left: 50px;
+	margin-right: 50px;
 	margin-bottom: 100px;
 }
 
@@ -206,25 +254,189 @@ hr {
 	height: 200px;
 	border-radius: 10px;
 }
+.old-review{
+	font-size: 20px;
+	font-weight: bold;
+	position: relative;
+	top:3px;
+	right: 150px;
+	color:black;
+}
 
-.review{
+.review {
 	text-align: center;
 }
 
-.cart_table{
+.table1{
+	width: 500px;
+	padding: 1em 1em;
+	color: #FFF;
+	background: #c0c0c0;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+	border-radius: 9px;
+}
+
+.back{
+	text-decoration: none;
+	background-color: #737373;
+	color: white;
+	padding: 2px;
+	font-weight: bold;
+	border: solid #737373 2px;
+	border-radius: 5px;
+	position:relative;
+	left:200px;
+	top:10px;
+}
+
+.back:hover{
+	color: #737373;
+	background-color: white;
+
+}
+
+.Review-Item-Label {
+	text-decoration: none;
+	background-color: #a9a9a9;
+	color: white;
+	padding: 0px;
+	font-weight: bold;
+	border: solid #a9a9a9 2px;
+	border-radius: 5px;
+	position: relative;
+	right: 120px;
+}
+
+.Review-Item-title {
+	font-size: 20px;
+	font-weight: bold;
+	position: relative;
+	top:3px;
+	right: 120px;
+}
+
+.Form-Item-Input {
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	margin-left: 40px;
+	padding-left: 1em;
+	padding-right: 1em;
+	height: 48px;
+	flex: 1;
+	width: 100%;
+	max-width: 410px;
+	background: #eaedf2;
+	font-size: 18px;
+	margin-top: 2px;
+}
+
+.Form-Item-Textarea {
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	margin-left: 40px;
+	padding-left: 1em;
+	padding-right: 1em;
+	height: 216px;
+	flex: 1;
+	width: 100%;
+	max-width: 410px;
+	background: #eaedf2;
+	font-size: 18px;
+}
+
+.Form-Btn{
+	margin-top: 10px;
+	margin-bottom: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    width: 150px;
+    font-size: 20px;
+    border-radius: 5px;
+    color:white;
+    background-color: #737373;
+    
+}
+
+.Form-border{
+	width: 50%;
+}
+
+.cart_table {
 	text-align: center;
 }
 
-.customer_form{
+.table2{
+	width: 500px;
+	padding: 1em 1em;
+	color: #FFF;
+	background: #c0c0c0;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+	border-radius: 9px;
+}
+
+.order-btn{
+	margin-top: 10px;
+	margin-bottom: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    width: 150px;
+    font-size: 20px;
+    border-radius: 5px;
+    color:white;
+    background-color: #737373;
+}
+
+.confirm-btn{
+	margin-top: 10px;
+	margin-bottom: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    width: 150px;
+    font-size: 20px;
+    border-radius: 5px;
+    color:white;
+    background-color: #737373;
+}
+
+.customer_form {
 	text-align: center;
 }
 
-.order_confirm{
+.order_confirm {
 	text-align: center;
 }
 
-.orderd{
+.orderConfirm-btn{
+	margin-top: 10px;
+	margin-bottom: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    width: 170px;
+    font-size: 20px;
+    border-radius: 5px;
+    color:white;
+    background-color: #737373;
+}
+
+.orderd {
 	text-align: center;
+}
+
+.table3{
+	border-collapse: collapse;
+  width: 100%;
+  max-width: 700px;
+}
+.table3 th, .table3 td {
+  border-bottom: 2px solid #c1c7c6;
+  padding: 1em;
+}
+.table3 th {
+  border-bottom: 2px solid #a7a7a7;;
+  font-weight: bold;
+  text-align: center;
+  width: 20%;
+  min-width: 4em;
 }
 
 footer {
@@ -239,172 +451,243 @@ footer {
  * @description: A Simple Carousel Pure CSS Using Sass
  * @version: 1.0.0
  */
-.carousel > input[type=radio]:nth-child(5):checked ~ .carousel__next > label:nth-child(1), .carousel > input[type=radio]:nth-child(5):checked ~ .carousel__prev > label:nth-child(4), .carousel > input[type=radio]:nth-child(4):checked ~ .carousel__next > label:nth-child(5), .carousel > input[type=radio]:nth-child(4):checked ~ .carousel__prev > label:nth-child(3), .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__next > label:nth-child(4), .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__prev > label:nth-child(2), .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__next > label:nth-child(3), .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__prev > label:nth-child(1), .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__next > label:nth-child(2), .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__prev > label:nth-child(5) {
-  opacity: 1 !important;
-  z-index: 3;
+.carousel>input[type=radio]:nth-child(5):checked~.carousel__next>label:nth-child(1),
+.carousel>input[type=radio]:nth-child(5):checked~.carousel__prev>label:nth-child(4),
+.carousel>input[type=radio]:nth-child(4):checked~.carousel__next>label:nth-child(5),
+.carousel>input[type=radio]:nth-child(4):checked~.carousel__prev>label:nth-child(3),
+.carousel>input[type=radio]:nth-child(3):checked~.carousel__next>label:nth-child(4),
+.carousel>input[type=radio]:nth-child(3):checked~.carousel__prev>label:nth-child(2),
+.carousel>input[type=radio]:nth-child(2):checked~.carousel__next>label:nth-child(3),
+.carousel>input[type=radio]:nth-child(2):checked~.carousel__prev>label:nth-child(1),
+.carousel>input[type=radio]:nth-child(1):checked~.carousel__next>label:nth-child(2),
+.carousel>input[type=radio]:nth-child(1):checked~.carousel__prev>label:nth-child(5) {
+	opacity: 1 !important;
+	z-index: 3;
 }
-
-
 
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 
 body {
-  background: #fcfcfc;
-  margin: 0;
+	background: #fcfcfc;
+	margin: 0px;
+	background-color: #dcdcdc;
 }
 
 .container {
-  width: 900px;
-  min-width: 900px;
-  margin: 50px auto;
+	width: 900px;
+	min-width: 900px;
+	margin: 20px auto;
 }
 
 .carousel {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
 }
-.carousel > input[type=radio] {
-  position: absolute;
-  left: 0;
-  opacity: 0;
-  top: 0;
+
+.carousel>input[type=radio] {
+	position: absolute;
+	left: 0;
+	opacity: 0;
+	top: 0;
 }
-.carousel > input[type=radio]:checked ~ .carousel__items .carousel__item,
-.carousel > input[type=radio]:checked ~ .carousel__prev > label,
-.carousel > input[type=radio]:checked ~ .carousel__next > label {
-  opacity: 0;
+
+.carousel>input[type=radio]:checked~.carousel__items .carousel__item,
+.carousel>input[type=radio]:checked~.carousel__prev>label,
+.carousel>input[type=radio]:checked~.carousel__next>label {
+	opacity: 0;
 }
-.carousel > input[type=radio]:nth-child(1):checked ~ .carousel__items .carousel__item:nth-child(1) {
-  opacity: 1;
+
+.carousel>input[type=radio]:nth-child(1):checked~.carousel__items .carousel__item:nth-child(1) {
+	opacity: 1;
 }
-.carousel > input[type=radio]:nth-child(1):checked ~ .carousel__nav > label:nth-child(1) {
-  background: #ccc;
-  cursor: default;
-  pointer-events: none;
+
+.carousel>input[type=radio]:nth-child(1):checked~.carousel__nav>label:nth-child(1) {
+	background: #ccc;
+	cursor: default;
+	pointer-events: none;
 }
-.carousel > input[type=radio]:nth-child(2):checked ~ .carousel__items .carousel__item:nth-child(2) {
-  opacity: 1;
+
+.carousel>input[type=radio]:nth-child(2):checked~.carousel__items .carousel__item:nth-child(2) {
+	opacity: 1;
 }
-.carousel > input[type=radio]:nth-child(2):checked ~ .carousel__nav > label:nth-child(2) {
-  background: #ccc;
-  cursor: default;
-  pointer-events: none;
+
+.carousel>input[type=radio]:nth-child(2):checked~.carousel__nav>label:nth-child(2) {
+	background: #ccc;
+	cursor: default;
+	pointer-events: none;
 }
-.carousel > input[type=radio]:nth-child(3):checked ~ .carousel__items .carousel__item:nth-child(3) {
-  opacity: 1;
+
+.carousel>input[type=radio]:nth-child(3):checked~.carousel__items .carousel__item:nth-child(3) {
+	opacity: 1;
 }
-.carousel > input[type=radio]:nth-child(3):checked ~ .carousel__nav > label:nth-child(3) {
-  background: #ccc;
-  cursor: default;
-  pointer-events: none;
+
+.carousel>input[type=radio]:nth-child(3):checked~.carousel__nav>label:nth-child(3) {
+	background: #ccc;
+	cursor: default;
+	pointer-events: none;
 }
-.carousel > input[type=radio]:nth-child(4):checked ~ .carousel__items .carousel__item:nth-child(4) {
-  opacity: 1;
+
+.carousel>input[type=radio]:nth-child(4):checked~.carousel__items .carousel__item:nth-child(4) {
+	opacity: 1;
 }
-.carousel > input[type=radio]:nth-child(4):checked ~ .carousel__nav > label:nth-child(4) {
-  background: #ccc;
-  cursor: default;
-  pointer-events: none;
+
+.carousel>input[type=radio]:nth-child(4):checked~.carousel__nav>label:nth-child(4) {
+	background: #ccc;
+	cursor: default;
+	pointer-events: none;
 }
-.carousel > input[type=radio]:nth-child(5):checked ~ .carousel__items .carousel__item:nth-child(5) {
-  opacity: 1;
+
+.carousel>input[type=radio]:nth-child(5):checked~.carousel__items .carousel__item:nth-child(5) {
+	opacity: 1;
 }
-.carousel > input[type=radio]:nth-child(5):checked ~ .carousel__nav > label:nth-child(5) {
-  background: #ccc;
-  cursor: default;
-  pointer-events: none;
+
+.carousel>input[type=radio]:nth-child(5):checked~.carousel__nav>label:nth-child(5) {
+	background: #ccc;
+	cursor: default;
+	pointer-events: none;
 }
+
 .carousel__items {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  width: 100%;
-  height: 600px;
-  position: relative;
+	margin: 0;
+	padding: 0;
+	object-fit: cover;
+	width: 300px;
+	height: 300px;
 }
+
 .carousel__item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  transition: opacity 2s;
-  -webkit-transition: opacity 2s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	max-width: 100%;
+	max-height: 100%;
+	z-index: 1;
+	transition: opacity 2s;
+	-webkit-transition: opacity 2s;
 }
+
 .carousel__item img {
-  width: 100%;
-  vertical-align: middle;
+	width: 100%;
+	vertical-align: middle;
 }
-.carousel__prev > label, .carousel__next > label {
-  border: 1px solid #fff;
-  border-radius: 50%;
-  cursor: pointer;
-  display: block;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  opacity: 0;
-  z-index: 2;
+
+.carousel__prev>label,
+.carousel__next>label {
+	border: 1px solid #fff;
+	border-radius: 50%;
+	cursor: pointer;
+	display: block;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	opacity: 0;
+	z-index: 2;
 }
-.carousel__prev > label:hover, .carousel__prev > label:focus, .carousel__next > label:hover, .carousel__next > label:focus {
-  opacity: 0.5 !important;
+
+.carousel__prev>label:hover,
+.carousel__prev>label:focus,
+.carousel__next>label:hover,
+.carousel__next>label:focus {
+	opacity: 0.5 !important;
 }
-.carousel__prev > label:before, .carousel__prev > label:after, .carousel__next > label:before, .carousel__next > label:after {
-  content: "";
-  position: absolute;
-  width: inherit;
-  height: inherit;
+
+.carousel__prev>label:before,
+.carousel__prev>label:after,
+.carousel__next>label:before,
+.carousel__next>label:after {
+	content: "";
+	position: absolute;
+	width: inherit;
+	height: inherit;
 }
-.carousel__prev > label:before, .carousel__next > label:before {
-  background: linear-gradient(to top, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%), linear-gradient(to left, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%);
-  width: 60%;
-  height: 60%;
-  top: 20%;
+
+.carousel__prev>label:before,
+.carousel__next>label:before {
+	background: linear-gradient(to top, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%), linear-gradient(to left, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%);
+	width: 60%;
+	height: 60%;
+	top: 20%;
 }
-.carousel__prev > label {
-  left: 2%;
+
+.carousel__prev>label {
+	left: 2%;
 }
-.carousel__prev > label:before {
-  left: 35%;
-  top: 20%;
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
+
+.carousel__prev>label:before {
+	left: 35%;
+	top: 20%;
+	transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
 }
-.carousel__next > label {
-  right: 2%;
+
+.carousel__next>label {
+	right: 2%;
 }
-.carousel__next > label:before {
-  left: 10%;
-  transform: rotate(315deg);
-  -webkit-transform: rotate(315deg);
+
+.carousel__next>label:before {
+	left: 10%;
+	transform: rotate(315deg);
+	-webkit-transform: rotate(315deg);
 }
+
 .carousel__nav {
-  position: absolute;
-  bottom: 3%;
-  left: 0;
-  text-align: center;
-  width: 100%;
-  z-index: 3;
+	position: absolute;
+	bottom: 3%;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	z-index: 3;
 }
-.carousel__nav > label {
-  border: 1px solid #fff;
-  display: inline-block;
-  border-radius: 50%;
-  cursor: pointer;
-  margin: 0 0.125%;
-  width: 20px;
-  height: 20px;
+
+.carousel__nav>label {
+	border: 1px solid #fff;
+	display: inline-block;
+	border-radius: 50%;
+	cursor: pointer;
+	margin: 0 0.125%;
+	width: 20px;
+	height: 20px;
+}
+
+
+.sample2 {
+	width:			280px;
+	height:			188px;
+	overflow:		hidden;
+	margin:			10px 8px 10px 16px;
+	position:		relative;
+}
+.sample2 .caption {
+	font-size:		130%;
+	text-align: 		center;
+	color:			#fff;
+	position: relative;
+	
+}
+.sample2 .mask {
+	width:			100%;
+	height:			100%;
+	position:		absolute;
+	top:			0;
+	left:			0;
+	opacity:		0;	/* マスクを表示しない */
+	background-color:	rgba(0,0,0,0.4);
+	-webkit-transition:	all 0.6s ease;
+	transition:		all 0.6s ease;
+}
+.sample2:hover .mask {
+	opacity:		1;	/* マスクを表示する */
+	padding-top:		80px;	/* ホバーで下にずらす */
 }

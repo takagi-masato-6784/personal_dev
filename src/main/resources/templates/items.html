@@ -12,60 +12,74 @@
 <body>
 	<header th:replace="header"></header>
 
-	<div class="container">
-		<div class="carousel">
-			<input type="radio" id="carousel-1" name="carousel[]" checked>
-			<input type="radio" id="carousel-2" name="carousel[]">
-			<input type="radio" id="carousel-3" name="carousel[]">
-			<ul class="carousel__items">
-				<li class="carousel__item"><img
-						src="SONY.JPG"
-						alt=""></li>
-				<li class="carousel__item"><img
-						src="JBL.jpg"
-						alt=""></li>
-				<li class="carousel__item"><img
-						src="Panasonic.jpg"
-						alt=""></li>
-			</ul>
-			<div class="carousel__prev">
-				<label for="carousel-1"></label>
-				<label for="carousel-2"></label>
-				<label for="carousel-3"></label>
-			</div>
-			<div class="carousel__next">
-				<label for="carousel-1"></label>
-				<label for="carousel-2"></label>
-				<label for="carousel-3"></label>
-			</div>
-			<div class="carousel__nav">
-				<label for="carousel-1"></label>
-				<label for="carousel-2"></label>
-				<label for="carousel-3"></label>
-			</div>
-		</div>
-	</div>
-
 	<div class="wrap">
 		<div class="side">
 			<div class="side_content" style="display: inline;">
-				<a href="/items" class="allItem">・全商品</a>
-				<p>・ブランド</p>
-				<a th:each="b:${brands}" th:href="@{/items(brandId=${b.id})}">
-					<span th:text="${b.brand}" style="padding-left:10px;"></span></a>
-				<p>・コーデック</p>
-				<a th:each="c:${codec}" th:href="@{/items(codecId=${c.id})}">
-					<span th:text="${c.codec}" style="padding-left:10px;"></span>
-				</a>
+				<a href="/items" class="allItem">・全商品</a><br>
+				<p class="brand-word">・ブランド</p>
+				<block th:each="b:${brands}">
+					<a th:href="@{/items(brandId=${b.id})}" class="category-brand">
+						<span th:text="${b.brand}" style="padding-left:10px;"></span>
+					</a><br>
+				</block>
+				<p class="codec-word">・コーデック</p>
+				<block th:each="c:${codec}">
+					<a th:href="@{/items(codecId=${c.id})}" class="category-codec">
+						<span th:text="${c.codec}" style="padding-left:10px;"></span>
+					</a>
+					<br>
+				</block>
 			</div>
 		</div>
 		<div class="main">
 			<h1>Item</h1>
 			<hr>
+			<div class="container">
+				<div class="carousel">
+					<input type="radio" id="carousel-1" name="carousel[]" checked>
+					<input type="radio" id="carousel-2" name="carousel[]">
+					<input type="radio" id="carousel-3" name="carousel[]">
+					<input type="radio" id="carousel-4" name="carousel[]">
+					<input type="radio" id="carousel-5" name="carousel[]">
+					<ul class="carousel__items">
+						<li class="carousel__item"><img src="/slide.img/Panasonic.jpg" alt=""></li>
+						<li class="carousel__item"><img src="/slide.img/SONY2.jpg" alt=""></li>
+						<li class="carousel__item"><img src="/slide.img/JBL.jpg" alt=""></li>
+						<li class="carousel__item"><img src="/slide.img/AudioTechnica.jpg" alt=""></li>
+						<li class="carousel__item"><img src="/slide.img/Zenhaizer.jpg" alt=""></li>
+					</ul>
+					<div class="carousel__prev">
+						<label for="carousel-1"></label>
+						<label for="carousel-2"></label>
+						<label for="carousel-3"></label>
+						<label for="carousel-4"></label>
+						<label for="carousel-5"></label>
+					</div>
+					<div class="carousel__next">
+						<label for="carousel-1"></label>
+						<label for="carousel-2"></label>
+						<label for="carousel-3"></label>
+						<label for="carousel-4"></label>
+						<label for="carousel-5"></label>
+					</div>
+					<div class="carousel__nav">
+						<label for="carousel-1"></label>
+						<label for="carousel-2"></label>
+						<label for="carousel-3"></label>
+						<label for="carousel-4"></label>
+						<label for="carousel-5"></label>
+					</div>
+				</div>
+			</div>
 			<div class="items">
 				<div th:each="i:${items}" class="item">
 					<div style="display: inline;">
-						<img th:src="'/item.img/'+${i.id}+'.jpg'" class="item-image"><br>
+						<div class="sample2">
+							<img th:src="'/item.img/'+${i.id}+'.jpg'" class="item-image"><br>
+							<div class="mask">
+								<div class="caption">[(${i.describe})]</div>
+							</div>
+						</div>
 						<a th:each="b:${brands}"><span th:if="${b.id == i.brandId}" th:text="${b.brand}"></span></a>
 						<a th:text="${i.name}"></a><br>
 						<a>コーデック/</a><a th:each="c:${codec}"><span th:if="${c.id == i.codecId}"

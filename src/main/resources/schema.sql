@@ -26,7 +26,8 @@ id SERIAL PRIMARY KEY,
 brand_id INTEGER,
 codec_id INTEGER,
 name TEXT,
-price INTEGER
+price INTEGER,
+describe TEXT
 );
 -- 顧客テーブル
 CREATE TABLE customers

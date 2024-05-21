@@ -9,13 +9,15 @@
 
 <body class="review">
 	<header>
-		<img src="Audio Shopping.png" class="logo"><br>
+		<img src="/Audio Shopping.png" class="logo"><br>
 		<h1>Audio Shopping</h1>
 	</header>
 	<p><span th:text="${message}" style="color:red"></span></p>
+
+	<h1 class="old-review">・これまでのレビュー</h1>
 	<div th:if="reviews">
 		<form th:unless="${#lists.size(reviews)}==0">
-			<table border="1" style="margin: auto;">
+			<table border="1" style="margin: auto;" class="table1">
 				<tr>
 					<th>商品番号</th>
 					<th>タイトル</th>
@@ -34,15 +36,39 @@
 			</table>
 		</form>
 	</div>
-
-
-
-	<ul>
-		<li th:each="_msg : ${msg}" th:text="${_msg}" style="color:red"></li>
-	</ul>
+	<a href="/items" class="back">商品一覧へ</a>
 
 	<form action="/add/review" method="post">
 		<input type="hidden" name="itemId" th:Value="${itemId}">
+		<ul>
+			<li th:each="_msg : ${msg}" th:text="${_msg}" style="color:red; list-style: none;"></li>
+		</ul>
+		<a>商品番号</a>
+		<a th:text="${itemId}"></a>
+		<hr class="Form-border">
+		<div>
+			<a class="Review-Item-Label">必須</a>
+			<a class="Review-Item-title">タイトル</a>
+			<p><input type="text" name=title class="Form-Item-Input"></p>
+			<hr class="Form-border">
+			<a class="Review-Item-Label">必須</a>
+			<a class="Review-Item-title">内容</a>
+			<p><textarea name="report" class="Form-Item-Textarea"></textarea></p>
+			<hr class="Form-border">
+			<a class="Review-Item-Label">必須</a>
+			<a class="Review-Item-title">評価</a>
+			<p><input type="number" name="score" placeholder="十段階で評価してください" class="Form-Item-Input"></p>
+			<hr class="Form-border">
+		</div>
+
+		<button class="Form-Btn">登録</button>
+	</form>
+	<hr>
+
+
+
+	<!--<form action="/add/review" method="post">
+		<hr>
 		<table border="1" style="margin: auto;">
 			<tr>
 				<th>商品番号</th>
@@ -60,9 +86,7 @@
 		</table>
 		<button>登録</button>
 
-	</form>
-
-	<a href="/items">商品一覧へ</a>
+	</form>-->
 
 </body>
 

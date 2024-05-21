@@ -30,6 +30,8 @@ public class Item {
 	@Transient
 	private Integer quantity;
 	
+	private String describe;
+	
 	public Item() {
 		
 	}
@@ -65,6 +67,11 @@ public class Item {
 	
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
+	}
+
+
+	public String getDescribe() {
+		return describe;
 	}
 
 }
