@@ -11,9 +11,15 @@
 			<img src="Audio Shopping.png" class="image"><br>
 			<h1 class ="word">Audio Shopping</h1>
 		</div>
+	<h3>CREATE ACCOUNT</h3>	
 	<form action="/addAccount" method ="post">
 		<span class="name">お名前を入力してください</span><br>
 		<input type="text" name = "addName"><br>
+		<span class="name">メールアドレスを入力してください</span><br>
+		<input type="text" name = "addEmail"><br>
+		<span class="name">パスワードを入力してください</span><br>
+		<input type="password" name = "addPw"><br>
+		<p th:each="e2:${errar2}" th:text="${e2}" style="color:red"></p>
 	<button>登録</button>
 	</form>
 	</main>

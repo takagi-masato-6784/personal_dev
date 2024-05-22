@@ -32,6 +32,8 @@ public class Item {
 	
 	private String describe;
 	
+	private Integer type;
+	
 	public Item() {
 		
 	}
@@ -73,5 +75,12 @@ public class Item {
 	public String getDescribe() {
 		return describe;
 	}
+
+
+	public Integer getType() {
+		return type;
+	}
+	
+	
 
 }

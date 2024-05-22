@@ -15,7 +15,18 @@
 	<div class="wrap">
 		<div class="side">
 			<div class="side_content" style="display: inline;">
+				<form action="/items" method="get" class="search_container">
+					<input type="text" name="keyword" th:value="${keyword}" placeholder="商品名">
+					<input type="submit">
+				</form>
 				<a href="/items" class="allItem">・全商品</a><br>
+				<p class="type-word">・種類</p>
+				<block th:each="t:${type}">
+					<a th:href="@{/items(type=${t.id})}" class="category-type">
+						<span th:if="${t.type == 1}" style="padding-left:10px;">ヘッドホン</span>
+						<span th:if="${t.type == 2}" style="padding-left:10px;">イヤホン</span>
+					</a><br>
+				</block>
 				<p class="brand-word">・ブランド</p>
 				<block th:each="b:${brands}">
 					<a th:href="@{/items(brandId=${b.id})}" class="category-brand">

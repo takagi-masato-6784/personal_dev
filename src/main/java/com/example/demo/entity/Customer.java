@@ -17,11 +17,12 @@ public class Customer {
 	private String address;
 	private String tel;
 	private String email;
+	private String pw;
 
 	public Customer() {
 
 	}
-
+	
 	public Customer(String name, String address, String tel, String email) {
 		this.name = name;
 		this.address = address;
@@ -29,8 +30,18 @@ public class Customer {
 		this.email = email;
 	}
 
-	public Customer(String addName) {
+	public Customer(String name, String address, String tel, String email, String pw) {
+		this.name = name;
+		this.address = address;
+		this.tel = tel;
+		this.email = email;
+		this.pw = pw;
+	}
+
+	public Customer(String addName, String addEmail, String addPw) {
 		this.name = addName;
+		this.email = addEmail;
+		this.pw = addPw;
 		
 	}
 
@@ -53,6 +64,10 @@ public class Customer {
 
 	public String getEmail() {
 		return email;
+	}
+
+	public String getPw() {
+		return pw;
 	}
 
 }

@@ -35,14 +35,12 @@ public class OrderController {
 	@Autowired
 	OrderDetailRepository orderDetailRepository;
 
-	
 	@GetMapping("/order")
 	public String index() {
 
 		return "customerForm";
 	}
 
-	
 	@PostMapping("/order/confirm")
 	public String confirm(
 			@RequestParam("name") String name,
@@ -51,14 +49,12 @@ public class OrderController {
 			@RequestParam("email") String email,
 			Model model) {
 
-		
 		Customer customer = new Customer(name, address, tel, email);
 		model.addAttribute("customer", customer);
 
 		return "orderConfirm";
 	}
 
-	
 	@PostMapping("/order")
 	public String order(
 			@RequestParam("name") String name,
@@ -67,32 +63,24 @@ public class OrderController {
 			@RequestParam("email") String email,
 			Model model) {
 
-		
 		Customer customer = new Customer(name, address, tel, email);
 		customerRepository.save(customer);
 
-		
 		Order order = new Order(
 				customer.getId(),
 				LocalDate.now(),
 				cart.getTotalPrice());
 		orderRepository.save(order);
-		
+
 		List<Item> itemList = cart.getItems();
 		List<OrderDetail> orderDetails = new ArrayList<>();
 		for (Item item : itemList) {
-			orderDetails.add(
-					new OrderDetail(
-							order.getId(),
-							item.getId(),
-							item.getQuantity()));
+			orderDetails.add(new OrderDetail(order.getId(),item.getId(),item.getQuantity()));
 		}
 		orderDetailRepository.saveAll(orderDetails);
 
-		
 		cart.clear();
 
-		
 		model.addAttribute("orderNumber", order.getId());
 
 		return "ordered";

@@ -8,5 +8,5 @@ import com.example.demo.entity.Customer;
 
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
-	List<Customer> findByName(String name);
+	List<Customer> findByNameAndEmailAndPw(String name, String email, String pw);
 }

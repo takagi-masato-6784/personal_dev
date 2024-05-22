@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,24 +36,40 @@ public class AccountController {
 
 	@PostMapping("/login")
 	public String login(
-			@RequestParam("name") String name,
+			@RequestParam(name = "name", defaultValue = "") String name,
+			@RequestParam(name = "email", defaultValue = "") String email,
+			@RequestParam(name = "pw", defaultValue = "") String pw,
 			Model model) {
-		
+
+		List<Customer> customer = customerRepository.findByNameAndEmailAndPw(name, email, pw);
+		List<String> errar = new ArrayList<>();
+
 		if (name == null || name.length() == 0) {
-			model.addAttribute("message", "名前を入力してください");
-			return "login";
-		} 
-
-		List<Customer> customer = customerRepository.findByName(name);
-
-		if (customer.size() != 0) {
-			account.setName(name);
-			return "redirect:/items";
-		} else {
-			model.addAttribute("error", "お名前が存在しません");
+			errar.add("名前を入力してください");
 		}
 
-		return "login";
+		if (email == null || email.length() == 0) {
+			errar.add("メールアドレスを入力してください");
+		}
+
+		if (pw.equals("")) {
+			errar.add("パスワードを入力してください");
+		}
+
+		if (customer.size() == 0) {
+			errar.add("または一致するユーザーが存在しません");
+		}
+		
+		if(errar.size() >0) {
+			model.addAttribute("errar", errar);
+			return "login";
+		}
+		
+
+		account.setName(name);
+		account.setEmail(email);
+		account.setPw(pw);
+		return "redirect:/items";
 
 	}
 
@@ -63,9 +80,30 @@ public class AccountController {
 
 	@PostMapping("/addAccount")
 	public String addShow(
-			@RequestParam("addName") String addName,
+			@RequestParam(name = "addName", defaultValue = "") String addName,
+			@RequestParam(name = "addEmail", defaultValue = "") String addEmail,
+			@RequestParam(name = "addPw", defaultValue = "") String addPw,
 			Model model) {
-		Customer customer = new Customer(addName);
+		Customer customer = new Customer(addName, addEmail, addPw);
+		List<String> errar2 = new ArrayList<>();
+
+		if (addName == null || addName.length() == 0) {
+			errar2.add("名前を入力してください");
+		}
+
+		if (addEmail == null || addEmail.length() == 0) {
+			errar2.add("メールアドレスを入力してください");
+		}
+
+		if (addPw.equals("")) {
+			errar2.add("パスワードを入力してください");
+		}
+		
+		if(errar2.size() >0) {
+			model.addAttribute("errar2", errar2);
+			return "addAccount";
+		}
+		
 		customerRepository.save(customer);
 		return "redirect:/login";
 	}
