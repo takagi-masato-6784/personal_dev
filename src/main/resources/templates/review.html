@@ -12,12 +12,12 @@
 		<img src="/Audio Shopping.png" class="logo"><br>
 		<h1>Audio Shopping</h1>
 	</header>
-	<p><span th:text="${message}" style="color:red"></span></p>
+	<p><span th:text="${message}" style="color:red" class="errar"></span></p>
 
-	<h1 class="old-review">・これまでのレビュー</h1>
+	<h1 class="old-review-word">・これまでのレビュー</h1>
 	<div th:if="reviews">
 		<form th:unless="${#lists.size(reviews)}==0">
-			<table border="1" style="margin: auto;" class="table1">
+			<table border="1" style="margin: auto;" class="table-review">
 				<tr>
 					<th>商品番号</th>
 					<th>タイトル</th>
@@ -41,10 +41,12 @@
 	<form action="/add/review" method="post">
 		<input type="hidden" name="itemId" th:Value="${itemId}">
 		<ul>
-			<li th:each="_msg : ${msg}" th:text="${_msg}" style="color:red; list-style: none;"></li>
+			<li th:each="_msg : ${msg}" th:text="${_msg}" style="color:red; list-style: none;" class="errar"></li>
 		</ul>
-		<a>商品番号</a>
+		<div  class="itemNumber">
+			<a>商品番号</a>
 		<a th:text="${itemId}"></a>
+		</div>
 		<hr class="Form-border">
 		<div>
 			<a class="Review-Item-Label">必須</a>

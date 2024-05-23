@@ -28,7 +28,8 @@ public class CartController {
 	@PostMapping("/cart/add")
 	public String addCart(
 			@RequestParam("itemId") int itemId,
-			@RequestParam(name = "quantity", defaultValue = "1") Integer quantity) {
+			@RequestParam(name = "quantity", defaultValue = "1") Integer quantity
+			) {
 
 	
 		Item item = itemRepository.findById(itemId).get();

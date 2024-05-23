@@ -50,6 +50,29 @@ public class OrderController {
 			Model model) {
 
 		Customer customer = new Customer(name, address, tel, email);
+		List<String> errar3 = new ArrayList<>();
+
+		if (name == null || name.length() == 0) {
+			errar3.add("名前を入力してください");
+		}
+
+		if (address == null || address.length() == 0) {
+			errar3.add("住所を入力してください");
+		}
+		
+		if (tel == null || tel.length() == 0) {
+			errar3.add("電話番号を入力してください");
+		}
+		
+		if (email == null || email.length() == 0) {
+			errar3.add("メールアドレスを入力してください");
+		}
+		
+		if(errar3.size() >0) {
+			model.addAttribute("errar3", errar3);
+			return "customerForm";
+		}
+		
 		model.addAttribute("customer", customer);
 
 		return "orderConfirm";

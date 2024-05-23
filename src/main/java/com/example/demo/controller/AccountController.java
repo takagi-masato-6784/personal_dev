@@ -43,21 +43,25 @@ public class AccountController {
 
 		List<Customer> customer = customerRepository.findByNameAndEmailAndPw(name, email, pw);
 		List<String> errar = new ArrayList<>();
-
+		boolean flag = false;
 		if (name == null || name.length() == 0) {
 			errar.add("名前を入力してください");
+			flag = true;
 		}
 
 		if (email == null || email.length() == 0) {
 			errar.add("メールアドレスを入力してください");
+			flag = true;
 		}
 
 		if (pw.equals("")) {
 			errar.add("パスワードを入力してください");
+			flag = true;
 		}
 
-		if (customer.size() == 0) {
-			errar.add("または一致するユーザーが存在しません");
+		if (customer.size() == 0 && flag==false) {
+			errar.add("一致するユーザーが存在しません");
+			
 		}
 		
 		if(errar.size() >0) {

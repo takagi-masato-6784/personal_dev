@@ -2,9 +2,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 
-/**
-ヘッター
-*/
+/**ログイン画面*/
+
+main.login {
+	width: 500px;
+	padding: 1em 1em;
+	color: #FFF;
+	background: #c0c0c0;
+	border-bottom: solid 6px #c0c0c0;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+	border-radius: 9px;
+	text-align: center;
+	position: relative;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+main.login .loginImage {
+	background-color: #737373;
+	height: 113px;
+	border-radius: 9px;
+}
+
+main.login .loginImage .image {
+	height: 6.5em;
+	position: relative;
+	right: 160px;
+	top: 4px;
+}
+
+main.login .loginImage h1.word {
+	font-family: 'Sacramento', cursive;
+	color: rgb(255, 255, 255);
+	font-size: 38pt;
+	position: relative;
+	left: 55px;
+	bottom: 110px;
+}
+
+main.login h2 {
+	font-size: 50px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	font-family: 'Caveat', cursive;
+}
+
+main.login h3 {
+	font-size: 45px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	font-family: 'Caveat', cursive;
+}
+
+
+main.login form .name {
+	font-size: 10px;
+}
+
+main.login button {
+
+	margin-top: 20px;
+	margin-bottom: 0 auto;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	width: 150px;
+	font-size: 20px;
+	border-radius: 5px;
+	color: white;
+	background-color: #737373;
+
+}
+
+main.login button:hover {
+	color: #737373;
+	background-color: white;
+}
+
+
+
+/**ヘッター*/
 header {
 	background-color: #737373;
 	color: rgb(255, 255, 255);
@@ -48,7 +126,6 @@ header .logout {
 
 }
 
-
 header a {
 
 	margin: 10px auto;
@@ -85,21 +162,11 @@ header .logo {
 	transition: 0.3s;
 }
 
-/**
-ボディ
-*/
-
+/**ボディ*/
 body {
-	background-color: #d9d9d9;
-}
-
-h1 {
-	padding-top: 10px;
-	text-align: center;
-	margin: 10px;
-	font-family: 'Sacramento', cursive;
-	color: white;
-	font-size: 60px;
+	background: #fcfcfc;
+	margin: 0px;
+	background-color: #dcdcdc;
 }
 
 .wrap {
@@ -107,9 +174,7 @@ h1 {
 	grid-template-columns: 0.5fr 3.5fr;
 }
 
-/**
-サイド
-*/
+/**ボディ(サイド)*/
 .side {
 	padding-top: 30px;
 	padding-left: 10px;
@@ -138,7 +203,6 @@ h1 {
 	border: none;
 	height: 2.0em;
 	background-color: #a9a9a9;
-
 }
 
 .search_container input[type="text"]:focus {
@@ -237,6 +301,34 @@ h1 {
 	font-weight: bold;
 }
 
+.codec-URL {
+	margin-left:5px;
+	position: relative;
+	top: 10px;
+	padding-left:5px;
+	padding-right: 5px;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+.codec-URL:hover {
+	color: #ffde59;
+	background-color: white;
+
+}
+
+.codecImg {
+	width: 70%;
+}
+
+.codecImgWord{
+	font-size:50px;
+	margin-top:40px;
+}
+
+/**ボディ（メイン）*/
 
 .main {
 	margin-top: 10px;
@@ -244,351 +336,20 @@ h1 {
 	border-radius: 9px;
 }
 
-main.login {
-	width: 500px;
-	padding: 1em 1em;
-	color: #FFF;
-	background: #c0c0c0;
-	border-bottom: solid 6px #c0c0c0;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-	border-radius: 9px;
-	text-align: center;
-	position: relative;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-
-}
-
-main.login .loginImage {
-	background-color: #737373;
-	height: 113px;
-	border-radius: 9px;
-}
-
-main.login .loginImage .image {
-	height: 6.5em;
-	position: relative;
-	right: 160px;
-	top: 4px;
-}
-
-main.login .loginImage h1.word {
-	font-family: 'Sacramento', cursive;
-	color: rgb(255, 255, 255);
-	font-size:38pt;
-	position: relative;
-	left: 55px;
-	bottom: 110px;
-}
-
-main.login h2 {
-	font-size: 50px;
-	margin-top: 20px;
-	margin-bottom: 5px;
-	font-family: 'Caveat', cursive;
-}
-
-main.login h3 {
-	font-size: 45px;
-	margin-top: 20px;
-	margin-bottom: 5px;
-	font-family: 'Caveat', cursive;
-}
-
-
-main.login form .name {
-	font-size: 10px;
-}
-
-main.login button {
-
-	margin-top: 20px;
-	margin-bottom: 0 auto;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	width: 150px;
-	font-size: 20px;
-	border-radius: 5px;
-	color: white;
-	background-color: #737373;
-
-}
-
-main.login button:hover {
-	color: #737373;
-	background-color: white;
-}
-
 hr {
 	width: 70%;
 }
 
-.items {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 2em;
+h1 {
+	padding-top: 10px;
 	text-align: center;
-}
-
-.item {
-	padding:1px;
-	margin: 2em 0;
-	color: #FFF;
-	background: #c0c0c0;
-	border-bottom: solid 6px #c0c0c0;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-	border-radius: 9px;
-}
-
-.item-image {
-	object-fit: cover;
-	width: 280px;
-	height: 200px;
-	border-radius: 10px;
-}
-
-.item button {
-	padding-top: 2px;
-	padding-bottom: 2px;
-	width: 150px;
-	font-size: 10px;
-	border-radius: 5px;
-	color: white;
-	background-color: #737373;
-	display: block;
-	margin: auto;
-	margin-bottom:10px;
-}
-
-.item button:hover {
-	color: #737373;
-	background-color: white;
-}
-
-.old-review {
-	font-size: 20px;
-	font-weight: bold;
-	position: relative;
-	top: 3px;
-	right: 150px;
-	color: black;
-}
-
-.review {
-	text-align: center;
-}
-
-.table1 {
-	width: 500px;
-	padding: 1em 1em;
-	color: #FFF;
-	background: #c0c0c0;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-	border-radius: 9px;
-}
-
-.back {
-	text-decoration: none;
-	background-color: #737373;
-	color: white;
-	padding: 2px;
-	font-weight: bold;
-	border: solid #737373 2px;
-	border-radius: 5px;
-	position: relative;
-	left: 200px;
-	top: 10px;
-}
-
-.back:hover {
-	color: #737373;
-	background-color: white;
-
-}
-
-.Review-Item-Label {
-	text-decoration: none;
-	background-color: #a9a9a9;
-	color: white;
-	padding: 0px;
-	font-weight: bold;
-	border: solid #a9a9a9 2px;
-	border-radius: 5px;
-	position: relative;
-	right: 120px;
-}
-
-.Review-Item-title {
-	font-size: 20px;
-	font-weight: bold;
-	position: relative;
-	top: 3px;
-	right: 120px;
-}
-
-.Form-Item-Input {
-	border: 1px solid #ddd;
-	border-radius: 6px;
-	margin-left: 40px;
-	padding-left: 1em;
-	padding-right: 1em;
-	height: 48px;
-	flex: 1;
-	width: 100%;
-	max-width: 410px;
-	background: #eaedf2;
-	font-size: 18px;
-	margin-top: 2px;
-}
-
-.Form-Item-Textarea {
-	border: 1px solid #ddd;
-	border-radius: 6px;
-	margin-left: 40px;
-	padding-left: 1em;
-	padding-right: 1em;
-	height: 216px;
-	flex: 1;
-	width: 100%;
-	max-width: 410px;
-	background: #eaedf2;
-	font-size: 18px;
-}
-
-.Form-Btn {
-	margin-top: 10px;
-	margin-bottom: 10px;
-	padding-top: 6px;
-	padding-bottom: 6px;
-	width: 150px;
-	font-size: 20px;
-	border-radius: 5px;
-	color: white;
-	background-color: #737373;
-
-}
-
-.Form-border {
-	width: 50%;
-}
-
-.cart_table {
-	text-align: center;
-}
-
-.table2 {
-	width: 500px;
-	padding: 1em 1em;
-	color: #FFF;
-	background: #c0c0c0;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-	border-radius: 9px;
-}
-
-.order-btn {
-	margin-top: 10px;
-	margin-bottom: 10px;
-	padding-top: 6px;
-	padding-bottom: 6px;
-	width: 150px;
-	font-size: 20px;
-	border-radius: 5px;
-	color: white;
-	background-color: #737373;
-}
-
-.confirm-btn {
-	margin-top: 10px;
-	margin-bottom: 10px;
-	padding-top: 6px;
-	padding-bottom: 6px;
-	width: 150px;
-	font-size: 20px;
-	border-radius: 5px;
-	color: white;
-	background-color: #737373;
-}
-
-.customer_form {
-	text-align: center;
-}
-
-.order_confirm {
-	text-align: center;
-}
-
-.orderConfirm-btn {
-	margin-top: 10px;
-	margin-bottom: 10px;
-	padding-top: 6px;
-	padding-bottom: 6px;
-	width: 170px;
-	font-size: 20px;
-	border-radius: 5px;
-	color: white;
-	background-color: #737373;
-}
-
-.orderd {
-	text-align: center;
-}
-
-.table3 {
-	border-collapse: collapse;
-	width: 100%;
-	max-width: 700px;
-}
-
-.table3 th,
-.table3 td {
-	border-bottom: 2px solid #c1c7c6;
-	padding: 1em;
-}
-
-.table3 th {
-	border-bottom: 2px solid #a7a7a7;
-	;
-	font-weight: bold;
-	text-align: center;
-	width: 20%;
-	min-width: 4em;
-}
-
-/**フッター*/
-footer {
-	background-color: #737373;
-	height: 100px;
-
-}
-
-.footerimg {
-	height: 4em;
-	position: relative;
-	top: 20px;
-	padding-right: 330px;
-}
-
-.footerlogo {
-	font-size: 40px;
+	margin: 10px;
 	font-family: 'Sacramento', cursive;
-	position: relative;
-	padding-left: 50px;
-	bottom: 45px;
+	color: white;
+	font-size: 60px;
 }
 
-/**
- * Carousel.sass
- * @author: Dang Van Thanh
- * @github: https://github.com/dangvanthanh/carousel.sass
- * @description: A Simple Carousel Pure CSS Using Sass
- * @version: 1.0.0
- */
-/**
- スライドショー
- */
+/**ボディ（メイン スライドショー）*/
 .carousel>input[type=radio]:nth-child(5):checked~.carousel__next>label:nth-child(1),
 .carousel>input[type=radio]:nth-child(5):checked~.carousel__prev>label:nth-child(4),
 .carousel>input[type=radio]:nth-child(4):checked~.carousel__next>label:nth-child(5),
@@ -609,12 +370,6 @@ footer {
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-}
-
-body {
-	background: #fcfcfc;
-	margin: 0px;
-	background-color: #dcdcdc;
 }
 
 .container {
@@ -799,11 +554,52 @@ body {
 	height: 20px;
 }
 
+/**ボディ（メイン　商品一覧）*/
 
+.items {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 2em;
+	text-align: center;
+}
 
-/**商品説明
-*/
+.item {
+	padding: 1px;
+	margin: 2em 0;
+	color: #FFF;
+	background: #c0c0c0;
+	border-bottom: solid 6px #c0c0c0;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+	border-radius: 9px;
+}
 
+.item-image {
+	object-fit: cover;
+	width: 280px;
+	height: 200px;
+	border-radius: 10px;
+}
+
+.item button {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	width: 150px;
+	font-size: 10px;
+	border-radius: 5px;
+	color: white;
+	background-color: #737373;
+	display: block;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+.item button:hover {
+	color: #737373;
+	background-color: white;
+}
+
+/**商品説明*/
 
 .sample2 {
 	width: 280px;
@@ -837,7 +633,264 @@ body {
 	opacity: 1;
 	/* マスクを表示する */
 	padding-top: 20px;
-	padding-left:20px;
-	padding-right:20px;
+	padding-left: 20px;
+	padding-right: 20px;
 	/* ホバーで下にずらす */
 }
+
+/**レビュー画面*/
+
+.review {
+	text-align: center;
+}
+
+.old-review-word {
+	font-size: 20px;
+	font-weight: bold;
+	position: relative;
+	top: 3px;
+	right: 150px;
+	color: black;
+}
+
+.table-review {
+	width: 500px;
+	padding: 1em 1em;
+	color: #FFF;
+	background: #c0c0c0;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+	border-radius: 9px;
+}
+
+.back {
+	text-decoration: none;
+	background-color: #737373;
+	color: white;
+	padding: 2px;
+	font-weight: bold;
+	border: solid #737373 2px;
+	border-radius: 5px;
+	position: relative;
+	left: 200px;
+	top: 10px;
+}
+
+.back:hover {
+	color: #737373;
+	background-color: white;
+
+}
+
+.itemNumber {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.Review-Item-Label {
+	text-decoration: none;
+	background-color: #a9a9a9;
+	color: white;
+	padding: 0px;
+	font-weight: bold;
+	border: solid #a9a9a9 2px;
+	border-radius: 5px;
+	position: relative;
+	right: 120px;
+}
+
+.Review-Item-title {
+	font-size: 20px;
+	font-weight: bold;
+	position: relative;
+	top: 3px;
+	right: 120px;
+}
+
+.Form-Item-Input {
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	margin-left: 40px;
+	padding-left: 1em;
+	padding-right: 1em;
+	height: 48px;
+	flex: 1;
+	width: 100%;
+	max-width: 410px;
+	background: #eaedf2;
+	font-size: 18px;
+	margin-top: 2px;
+}
+
+.Form-Item-Textarea {
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	margin-left: 40px;
+	padding-left: 1em;
+	padding-right: 1em;
+	height: 216px;
+	flex: 1;
+	width: 100%;
+	max-width: 410px;
+	background: #eaedf2;
+	font-size: 18px;
+}
+
+.Form-Btn {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	width: 150px;
+	font-size: 20px;
+	border-radius: 5px;
+	color: white;
+	background-color: #737373;
+
+}
+
+.Form-border {
+	width: 50%;
+}
+
+
+/**カート画面*/
+
+.cart_table {
+	text-align: center;
+}
+
+.cartCofirm-table{
+	width: 500px;
+	padding: 1em 1em;
+	color: #FFF;
+	background: #c0c0c0;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+	border-radius: 9px;
+}
+
+.order-btn {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	width: 150px;
+	font-size: 20px;
+	border-radius: 5px;
+	color: white;
+	background-color: #737373;
+}
+
+
+/**カスタマーフォーム画面*/
+
+.customer_form {
+	text-align: center;
+}
+
+.confirm-btn {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	width: 150px;
+	font-size: 20px;
+	border-radius: 5px;
+	color: white;
+	background-color: #737373;
+}
+
+/**注文確認画面*/
+
+.order_confirm {
+	text-align: center;
+}
+
+.order-confirm-table {
+	border-collapse: collapse;
+	width: 100%;
+	max-width: 700px;
+}
+
+.order-confirm-table th,
+.order-confirm-table td {
+	border-bottom: 2px solid #c1c7c6;
+	padding: 1em;
+}
+
+.order-confirm-table th {
+	border-bottom: 2px solid #a7a7a7;
+	font-weight: bold;
+	text-align: center;
+	width: 20%;
+	min-width: 4em;
+}
+
+.orderConfirm-btn {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	width: 170px;
+	font-size: 20px;
+	border-radius: 5px;
+	color: white;
+	background-color: #737373;
+}
+
+/**注文番号表示画面*/
+
+.orderd {
+	text-align: center;
+}
+
+/**コーデック詳細画面*/
+.back2{
+	font-size:30px;
+	text-decoration: none;
+	background-color: #737373;
+	color: white;
+	padding: 2px;
+	font-weight: bold;
+	border: solid #737373 2px;
+	border-radius: 5px;
+	position:relative;
+	bottom:30px;
+	left:930px;
+}
+
+.back2:hover {
+	color: #737373;
+	background-color: white;
+
+}
+
+/**フッター*/
+footer {
+	background-color: #737373;
+	height: 100px;
+
+}
+
+.footerimg {
+	height: 4em;
+	position: relative;
+	top: 20px;
+	padding-right: 330px;
+}
+
+.footerlogo {
+	font-size: 40px;
+	font-family: 'Sacramento', cursive;
+	position: relative;
+	padding-left: 50px;
+	bottom: 45px;
+}
+
+/**エラー*/
+
+.errar {
+	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 1px;
+}
+

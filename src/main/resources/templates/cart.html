@@ -11,7 +11,8 @@
 	<main class="cart_table">
 		<table th:replace="cartItem"></table>
 		<form action="/order">
-			<button class="order-btn">注文する</button>
+			<div th:if="${@cart.items.size()}==0"  style="color:red" class="errar">カートの中身が空です</div>
+			<button class="order-btn" th:disabled="${@cart.items.size()}==0">注文する</button>
 		</form>
 	</main>
 	<hr>
