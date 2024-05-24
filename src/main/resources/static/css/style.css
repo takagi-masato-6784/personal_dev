@@ -4,7 +4,7 @@
 
 /**ログイン画面*/
 
-main.login {
+.login {
 	width: 500px;
 	padding: 1em 1em;
 	color: #FFF;
@@ -20,20 +20,20 @@ main.login {
 	transform: translate(-50%, -50%);
 }
 
-main.login .loginImage {
+.login .loginImage {
 	background-color: #737373;
 	height: 113px;
 	border-radius: 9px;
 }
 
-main.login .loginImage .image {
+.login .loginImage .image {
 	height: 6.5em;
 	position: relative;
 	right: 160px;
 	top: 4px;
 }
 
-main.login .loginImage h1.word {
+.login .loginImage h1.word {
 	font-family: 'Sacramento', cursive;
 	color: rgb(255, 255, 255);
 	font-size: 38pt;
@@ -42,14 +42,14 @@ main.login .loginImage h1.word {
 	bottom: 110px;
 }
 
-main.login h2 {
+.login h2 {
 	font-size: 50px;
 	margin-top: 20px;
 	margin-bottom: 5px;
 	font-family: 'Caveat', cursive;
 }
 
-main.login h3 {
+.login h3 {
 	font-size: 45px;
 	margin-top: 20px;
 	margin-bottom: 5px;
@@ -57,11 +57,11 @@ main.login h3 {
 }
 
 
-main.login form .name {
+.login form .name {
 	font-size: 10px;
 }
 
-main.login button {
+.login button {
 
 	margin-top: 20px;
 	margin-bottom: 0 auto;
@@ -75,7 +75,7 @@ main.login button {
 
 }
 
-main.login button:hover {
+.login button:hover {
 	color: #737373;
 	background-color: white;
 }
